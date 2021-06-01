@@ -1,201 +1,39 @@
 <html>
  <head> 
- <title>Registration</title> 
- <style>
-  p.MainHeading
-  { 
-   text-align: center;
-   font-size: 50px;
-  }
-  body 
-  {
-   background-image: url('https://cdn5.vectorstock.com/i/1000x1000/87/64/colorful-happy-holi-background-for-color-festival-vector-24498764.jpg');
-   background-size: cover;
-  }
-
-  .tooltip
-  {
-   position: relative;
-   display: inline-block;
-   border-bottom: 1px dotted black;
-  }
-  .tooltip .tooltiptext
-  {
-   visibility: hidden;
-   width: 110px;
-   background-color: black;
-   color: #fff;
-   text-align: center;
-   border-radius: 6px;
-   padding: 5px 0;
-   position: absolute;
-   z-index: 1;
-  }
-  .tooltip:hover .tooltiptext
-  {
-   visibility: visible;
-  }
-  </style>
-  <script>
-  function viewPassword()
-  {
-   var passwordInput = document.getElementById('idpassword1');
-   var passStatus = document.getElementById('pass-status');
-   if (passwordInput.type == 'password'){
-   passwordInput.type='text';
-   passStatus.className='fa fa-eye-slash';
-  }
-  else
-  {
-   passwordInput.type='password';
-   passStatus.className='fa fa-eye';
-  }
- }
- function checkFields(form) 
- {
-  var pass1 = document.getElementById("idpassword1").value;
-  var pass2 = document.getElementById("idpassword2").value;
-  var name = document.getElementById("idname").value;
-  var email = document.getElementById("idemail").value;
-  var phone = document.getElementById("idsearch").value;
-  phone = form.phone.value; 
-  if (name.length==0)
-  {
-   alert ("Please Enter Valid name"); 
-   return false; 
-  }
-  if (email.length==0)
-  {
-   alert ("Please Enter Valid email"); 
-   return false; 
-  }
-  if (phone.length!=10 || isNaN(phone) )
-  {
-   alert ("Please Enter Valid Phone Number"); 
-   return false; 
-  }
-
-  if (pass1.length==0 )
-  {
-   alert ("Please Enter Valid password"); 
-   return false; 
-  }
-
-  if (pass1.length < 8 )
-  {
-   alert ("Read Password Criteria"); 
-   return false; 
-  }
-  if (pass2.length==0)
-  {
-   alert ("Please confirm Password"); 
-   return false; 
-  }
-
-  if (pass1 != pass2)
-  {
-   alert ("Password Doesn't Match"); 
-   return false; 
-  }
- }
- function ValidateGender(form)
- {
-  ErrorText= "";
-  if ( ( form.gender[0].checked == false ) && ( form.gender[1].checked == false ) )
-  {
-   alert ( "Please choose your Gender" );
-   return false;
-  }
-  if (ErrorText= "")
-  {
-   form.submit()
-  }
- }
- </script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" >
- <link rel="stylesheet" href="style.css" >
- <script type="text/javascript" src="script.js"></script>
+  <title>Form</title> 
  </head> 
- <body align="right"> 
-  <b><p class="MainHeading">
-  <span style='color: #0000ff'>M</span>
-  <span style='color: #3333ff'>E</span>
-  <span style='color: #0066ff'>T</span>
-  <span style='color: #0099ff'>H</span>
-  <span style='color: #80bfff'>A</span>
-  </p>
-  <u><h1 style="color:#0073e6;">Sign Up</u></h1> 
+ <body align="center"> 
+  <br> 
+  <h1><u>Registration Form</u></h1> 
   <br>
-  <form name="form"  onSubmit = "return checkFields(this);">
-   <b>*
-   <input  id = "idname" type = "next" placeholder="Enter Name" name = "name" size = "20px"></input>
-   </input> <br><br>
-   <b>*
-   <input  id = "idemail" type = "email" placeholder="Enter Email" name = "email" size = "20px"></input>
-   </input><br><br>
-   <b>*
-   <input  id = "idsearch" type = "num" placeholder="Enter Mobile" name = "phone" size = "20px"></input>
-   </input><br><br>
-   <div class="container">
-    <div class="first-example">
-     <div class="tooltip"> !!<span class="tooltiptext">Should consist Atleast 8 characters</span>
-     </div>
-     *<input  id = "idpassword1" type = "password" placeholder="Enter Password" name = "password1" size = "20px">
-     <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
-    </div>
-    </input><br>
-    <b>*
-    <input  id = "idpassword2" type = "password" placeholder="Confirm Password" name = "password2" size = "20px">
-   </div>
-  </input><br><br>
-  <select name="state" id="state" class="form-control">
-   <option value="" disabled selected hidden>Select Region
-   <option value="Andhra Pradesh">Andhra Pradesh</option>
-   <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-   <option value="Assam">Assam</option>
-   <option value="Bihar">Bihar</option>
-   <option value="Chandigarh">Chandigarh</option>
-   <option value="Chhattisgarh">Chhattisgarh</option>
-   <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-   <option value="Daman and Diu">Daman and Diu</option>
-   <option value="Delhi">Delhi</option>
-   <option value="Lakshadweep">Lakshadweep</option>
-   <option value="Puducherry">Puducherry</option>
-   <option value="Goa">Goa</option>
-   <option value="Gujarat">Gujarat</option>
-   <option value="Haryana">Haryana</option>
-   <option value="Himachal Pradesh">Himachal Pradesh</option>
-   <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-   <option value="Jharkhand">Jharkhand</option>
-   <option value="Karnataka">Karnataka</option>
-   <option value="Kerala">Kerala</option>
-   <option value="Madhya Pradesh">Madhya Pradesh</option>
-   <option value="Maharashtra">Maharashtra</option>
-   <option value="Manipur">Manipur</option>
-   <option value="Meghalaya">Meghalaya</option>
-   <option value="Mizoram">Mizoram</option>
-   <option value="Nagaland">Nagaland</option>
-   <option value="Odisha">Odisha</option>
-   <option value="Punjab">Punjab</option>
-   <option value="Rajasthan">Rajasthan</option>
-   <option value="Sikkim">Sikkim</option>
-   <option value="Tamil Nadu">Tamil Nadu</option>
-   <option value="Telangana">Telangana</option>
-   <option value="Tripura">Tripura</option>
-   <option value="Uttar Pradesh">Uttar Pradesh</option>
-   <option value="Uttarakhand">Uttarakhand</option>
-   <option value="West Bengal">West Bengal</option>
-   </select><br><br>
-   <label "for="gender">*Gender:</label> 
-   <input  type="radio" id="male" name="gender" value="male">
-   <label for="male">Male</label>
-   <input  type="radio" id="female" name="gender" value="female">
-   <label for="female">Female
-   </label><br><br>
-   <label for="Dob">*Date Of Birth:</label>
-   <input type="date" id="Dob" name="Dob"><br><br>
-   <input type="submit" value="submit" onClick="ValidateGender(this.form)"></input>
+  <br> 
+  <form action="" method="post"> 
+   <label for="username">Username:</label> 
+   <input type="text" name="username" id="username">&nbsp;&nbsp;&nbsp;&nbsp; 
+   <label for="user-pwd">Password:</label> 
+   <input type="password" name="user-password" id="user-pwd"> 
+   <br>
+   <br> 
+   <input type="radio" name="gender" id="male"> 
+   <label for="male">Male</label> 
+   <input type="radio" name="gender" id="female"> 
+   <label for="female">Female</label> 
+   <br>
+   <br> 
+   <label for="city">City:</label> 
+   <select name="city" id="city"> <option value="Ernakulam">Ernakulam</option> <option value="Thrissur">Thrissur</option> <option value="Pathanamthitta">Pathanamthitta</option> </select> 
+   <br>
+   <br> 
+   <input type="checkbox" name="sports" id="soccer"> 
+   <label for="soccer">Soccer</label> 
+   <input type="checkbox" name="sports" id="cricket"> 
+   <label for="cricket">Cricket</label> 
+   <input type="checkbox" name="sports" id="baseball"> 
+   <label for="baseball">Baseball</label> 
+   <br>
+   <br> 
+   <input type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp; 
+   <input type="reset" value="Reset"> 
   </form> 
  </body>
 </html>
